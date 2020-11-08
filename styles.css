@@ -1,0 +1,30 @@
+/* Colour Palette
+from coolors.co
+Black Coral - 5e6472
+Melon - ffa69e
+Powder Blue- aed9e0 */
+
+
+.whole-site {
+    display: grid;
+    grid-gap: 10px;
+    background-color: #5e6472;
+    border: 10px solid #5e6472;
+    grid-template-columns: 1fr;
+}
+
+.header {
+    background-color: #ffa69e;
+}
+
+.notes {
+    background-color: #aed9e0;
+}
+
+.text-box {
+    background-color: #aed9e0;
+}
+
+.footer {
+    background-color: #ffa69e;
+}
