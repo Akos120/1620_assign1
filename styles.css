@@ -1,30 +1,159 @@
 /* Colour Palette
 from coolors.co
 Black Coral - 5e6472
-Melon - ffa69e
-Powder Blue- aed9e0 */
+Baker Miller Pink - ff97b7
+Powder Blue- aed9e0 
+Nadeshiko Pink - ffacc5 
+French Pink - ff5d8f */
 
+body {
+    font-family: 'Lora', serif;
+}
+
+h1, h2 {
+    font-family: 'Noto Sans JP', sans-serif;
+}
 
 .whole-site {
     display: grid;
-    grid-gap: 10px;
     background-color: #5e6472;
     border: 10px solid #5e6472;
-    grid-template-columns: 1fr;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 100px 75px 500px 100px;
+    grid-template-areas: 
+        "header header" 
+        "side main" 
+        "side main" 
+        "footer footer";
 }
 
 .header {
-    background-color: #ffa69e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff97b7;
+    grid-area: header;
+    grid-column: 1 /-1;
+    margin-bottom: 5px;
 }
 
-.notes {
+.side-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #aed9e0;
+    grid-area: side;
+    grid-row: 2;
+    margin-right: 5px;
 }
 
-.text-box {
+.side-bottom {
     background-color: #aed9e0;
+    grid-area: side;
+    grid-row: 3;
+    margin-right: 5px;
 }
+
+.side-bottom li {
+    padding: 5px;
+}
+
+.main-top {
+    background-color: #aed9e0;
+    grid-area: main;
+    grid-column: 2 / -1;
+    grid-row: 2 / -2;
+    /* margin: 5px; */
+}
+
+.button1 {
+    background-color: #ffacc5;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 6px;
+}
+
+.button2 {
+    background-color: #ff5d8f;
+    padding: 10px 20px;
+    color: white;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 6px;
+}
+
+.main-bottom {
+    background-color: #aed9e0;
+    grid-area: main;
+    grid-column: 2 /-1;
+    grid-row: 3 /-2;
+    margin-bottom: 10px;
+}
+
 
 .footer {
-    background-color: #ffa69e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ff97b7;
+    grid-area: footer;
+    grid-column: 1 /-1;
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    .whole-site {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px 75px 75px 500px 100px;
+        grid-template-areas:
+        "header" 
+        "side-top"
+        "side-bottom" 
+        "main-top" 
+        "main-bottom"
+        "footer";
+    }
+
+    .header {
+        grid-area: header;
+        margin: 5px;
+    }
+
+    .side-top {
+        grid-area: side-top;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .side-bottom {
+        grid-area: side-bottom;
+        margin-left: 5px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+
+    .side-bottom li {
+        display: inline;
+    }
+
+    .main-top {
+        grid-area: main-top;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .main-bottom {
+        grid-area: main-bottom;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .footer {
+        grid-area: footer;
+        margin: 5px;
+    }
 }
