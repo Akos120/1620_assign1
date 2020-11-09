@@ -76,7 +76,8 @@ h1, h2 {
     text-align: center;
     display: inline-block;
     font-size: 15px;
-    margin: 4px 6px;
+    margin-top: 15px;
+    margin-left: 10px;
 }
 
 .button2 {
@@ -86,7 +87,7 @@ h1, h2 {
     text-align: center;
     display: inline-block;
     font-size: 15px;
-    margin: 4px 6px;
+    margin-left: 10px;
 }
 
 .textarea {
