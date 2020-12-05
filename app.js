@@ -39,27 +39,29 @@ appearNote.addEventListener('click', e => {
 })
 
 const notesArray = [
-    {0:"note one", 1:"some text 1"}, 
-    {0:"note two", 1:"some text 2"}
+    {title:"note one", body:"some text 1"}, 
+    {title:"note two", body:"some text 2"}
 ]
 
 const saveBtn = document.querySelector('.button3')
 const noteArea = document.querySelector('#notes')
-let noteNum = 2
+
 let sideFunc = addSideNote.bind(notesArray)
-saveBtn.addEventListener('click', sideFunc)
 saveBtn.addEventListener('click', saveNote)
 
 function saveNote (arr) {
     const newNote = document.querySelector('textarea#notes').value
     const newNoteArr = newNote.replace(/\n/, '|||').split('|||')
-    notesArray.push({...newNoteArr})
+    notesArray.push({title: newNoteArr[0], body: newNoteArr[1]})
     console.log(notesArray)
 }
 
+let num = 2
+saveBtn.addEventListener('click', sideFunc)
+
 function addSideNote (arr) {
-    let noteTitle = arr[0]
-    noteNum++
+    let noteTitle = notesArray[num][0]
+    num++
     let list = document.createElement('li')
     list.appendChild(document.createTextNode(noteTitle))
     document.querySelector('ul').appendChild(list)
@@ -68,8 +70,8 @@ function addSideNote (arr) {
 const sideNote = document.querySelector('ul')
 
 sideNote.addEventListener('click', e => {
-    const note = notesArray.find(n => n[title] == e.target.innerText)
+    const noteBody = notesArray.find(n => n[0] == e.target.innerText)
     let x = document.querySelector('#notes')
-    newNote = note[body]
+    newNote = noteBody[1]
     x.setAttribute('placeholder', newNote)
 })
