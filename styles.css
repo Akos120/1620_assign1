@@ -1,10 +1,10 @@
-/* Colour Palette
-from coolors.co
+/* Colour Palette - from coolors.co
 Black Coral - 5e6472
 Baker Miller Pink - ff97b7
 Powder Blue- aed9e0 
 Nadeshiko Pink - ffacc5 
-French Pink - ff5d8f */
+French Pink - ff5d8f 
+Dark Cornflower Blue - 023e8a */
 
 body {
     font-family: 'Lora', serif;
@@ -135,6 +135,16 @@ textarea {
 .logos {
     display: flex;
     justify-content: center;
+}
+
+.dark-mode {
+    background-color: #023e8a;
+    color: white;
+}
+
+.dark-text {
+    background-color: #5e6472;
+    color: white
 }
 
 img{
