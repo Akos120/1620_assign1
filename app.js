@@ -39,8 +39,8 @@ appearNote.addEventListener('click', e => {
 })
 
 const notesArray = [
-    {title:"note one", body:"some text 1"}, 
-    {title:"note two", body:"some text 2"}
+    {0:"note one", 1:"some text 1"}, 
+    {0:"note two", 1:"some text 2"}
 ]
 
 const saveBtn = document.querySelector('.button3')
@@ -50,18 +50,19 @@ let sideFunc = addSideNote.bind(notesArray)
 saveBtn.addEventListener('click', sideFunc)
 saveBtn.addEventListener('click', saveNote)
 
-function saveNote (notesArray) {
+function saveNote (arr) {
     const newNote = document.querySelector('textarea#notes').value
     const newNoteArr = newNote.replace(/\n/, '|||').split('|||')
     notesArray.push({...newNoteArr})
+    console.log(notesArray)
 }
 
-function addSideNote (notesArray) {
-    let noteTitle = notesArray[0]
-    noteNum ++
-    let li = document.createElement('li')
-    li.appendChild(document.createTextNode(noteTitle))
-    document.querySelector('ul').appendChild(li)
+function addSideNote (arr) {
+    let noteTitle = arr[0]
+    noteNum++
+    let list = document.createElement('li')
+    list.appendChild(document.createTextNode(noteTitle))
+    document.querySelector('ul').appendChild(list)
 }
 
 const sideNote = document.querySelector('ul')
