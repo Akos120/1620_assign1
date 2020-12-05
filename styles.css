@@ -120,6 +120,15 @@ textarea {
     margin: 4px 6px;
 }
 
+.button4 {
+    background-color: #ffacc5;
+    padding: 0.5em;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 6px;
+}
+
 .footer {
     background-color: #ff97b7;
     grid-area: footer;
@@ -145,6 +154,16 @@ textarea {
 .dark-text {
     background-color: #5e6472;
     color: white
+}
+
+.dark-button {
+    background-color: #ff5d8f;
+    color: white;
+}
+
+.light-button {
+    background-color: #ffacc5;
+    color: black;
 }
 
 img{
