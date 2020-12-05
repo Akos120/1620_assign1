@@ -29,11 +29,46 @@ cancel.addEventListener('click', e => {
         document.querySelector('.bottom-button').style.display = 'none';
 })
 
-const newNote = document.querySelector('.button1');
+const appearNote = document.querySelector('.button1');
 
-newNote.addEventListener('click', e => {
+appearNote.addEventListener('click', e => {
     document.querySelector('textarea').style.display = 'block';
     document.querySelector('textarea').value = '';
     document.querySelector('.bottom-button').style.display = 'flex';
     
+})
+
+const notesArray = [
+    {title:"note one", body:"some text 1"}, 
+    {title:"note two", body:"some text 2"}
+]
+
+const saveBtn = document.querySelector('.button3')
+const noteArea = document.querySelector('#notes')
+let noteNum = 2
+let sideFunc = addSideNote.bind(notesArray)
+saveBtn.addEventListener('click', sideFunc)
+saveBtn.addEventListener('click', saveNote)
+
+function saveNote (notesArray) {
+    const newNote = document.querySelector('textarea#notes').value
+    const newNoteArr = newNote.replace(/\n/, '|||').split('|||')
+    notesArray.push({...newNoteArr})
+}
+
+function addSideNote (notesArray) {
+    let noteTitle = notesArray[0]
+    noteNum ++
+    let li = document.createElement('li')
+    li.appendChild(document.createTextNode(noteTitle))
+    document.querySelector('ul').appendChild(li)
+}
+
+const sideNote = document.querySelector('ul')
+
+sideNote.addEventListener('click', e => {
+    const note = notesArray.find(n => n[title] == e.target.innerText)
+    let x = document.querySelector('#notes')
+    newNote = note[body]
+    x.setAttribute('placeholder', newNote)
 })
